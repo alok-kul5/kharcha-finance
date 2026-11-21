@@ -12,7 +12,7 @@
 *Kharcha* (खर्चा) is Hindi for "expense". It is a personal finance app for India that logs spending on its own from bank and UPI SMS, reads shop receipts with on-device OCR, and answers questions like *"how much did I spend on food last month?"*. A small language model, **Gemma 3 1B, runs on the phone**. Nothing is uploaded and nothing costs money: no paid API, no server, no account.
 
 <p align="center">
-  <img src="docs/screenshots/home.jpg" width="200" alt="Home: this month's spending, trend chart against last month, budgets">
+  <img src="docs/screenshots/home.jpg" width="200" alt="Home: this month's total, a bar for each day, ticket stubs and the categories as bands">
   <img src="docs/screenshots/activity.jpg" width="200" alt="Activity: transactions grouped by day, search and category filters">
   <img src="docs/screenshots/insights.jpg" width="200" alt="Insights: category donut, six-month bars, budgets, recurring payments">
   <img src="docs/screenshots/ask.jpg" width="200" alt="Ask: plain-language questions answered with numbers computed in Dart">
