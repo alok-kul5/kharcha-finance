@@ -44,6 +44,6 @@ flutter:
     - family: Onest
       fonts:
         - asset: assets/fonts/Onest.ttf
-    - family: Anybody
+    - family: Gloock
       fonts:
-        - asset: assets/fonts/Anybody.ttf
+        - asset: assets/fonts/Gloock.ttf
