@@ -24,6 +24,8 @@
 
 > Screenshots are from the browser demo build (`flutter run -d chrome`), which runs on generated sample data. The demo has no SMS, camera or Gemma, so its Ask tab shows the rule-based parser.
 
+**[Try it in the browser](https://alok-kul5.github.io/kharcha-finance/)**: the same app compiled for the web, on a month of demo data. SMS reading, receipt scanning and Gemma need the Android build.
+
 **[Download the APK for Android (arm64)](https://github.com/alok-kul5/kharcha-finance/releases/download/v1.0.1/kharcha-v1.0.1-arm64.apk)**: Android 7.0+, fits nearly every phone from recent years, sideload it. Older 32-bit phones, emulators and a universal build are on the [release page](https://github.com/alok-kul5/kharcha-finance/releases/latest). It is not on the Play Store, because the developer account costs money.
 
 ---
