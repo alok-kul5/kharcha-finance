@@ -715,8 +715,8 @@ class GlassTabItem {
   final String label;
 }
 
-/// The floating tab bar: a deep-navy capsule with one blue-to-violet pill
-/// that slides to the selected tab, and a round add button beside it.
+/// The floating tab bar: a flat navy capsule (the home field's colour) with
+/// an amber pill that slides to the selected tab, and an amber add button.
 class GlassTabBar extends StatelessWidget {
   const GlassTabBar({super.key, required this.items, required this.selectedIndex, required this.onSelected, this.onAdd});
 
@@ -733,10 +733,8 @@ class GlassTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final bottom = MediaQuery.paddingOf(context).bottom;
     final reduce = Motion.reduced(context);
-    const capsule = BoxDecoration(
-      gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xff0a1a4f), Brand.heroTop]),
-    );
-    final shadow = [BoxShadow(color: Brand.heroTop.withAlpha(context.isDark ? 160 : 90), blurRadius: 24, offset: const Offset(0, 10))];
+    const capsule = BoxDecoration(color: Brand.navBar);
+    final shadow = [BoxShadow(color: Brand.navBar.withAlpha(context.isDark ? 160 : 90), blurRadius: 24, offset: const Offset(0, 10))];
     return Padding(
       padding: EdgeInsets.fromLTRB(16, 0, 16, bottom + 12),
       child: Row(mainAxisSize: MainAxisSize.min, children: [
@@ -761,7 +759,7 @@ class GlassTabBar extends StatelessWidget {
                   bottom: 0,
                   width: slot,
                   child: DecoratedBox(
-                    decoration: BoxDecoration(gradient: Brand.gradient, borderRadius: BorderRadius.circular(26), boxShadow: Brand.glow(90)),
+                    decoration: BoxDecoration(color: Brand.navAccent, borderRadius: BorderRadius.circular(26), boxShadow: Brand.navGlow()),
                   ),
                 ),
                 Row(children: [
@@ -796,11 +794,11 @@ class GlassTabBar extends StatelessWidget {
                   height: 64,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    gradient: Brand.gradient,
-                    border: Border.all(color: Colors.white.withAlpha(40)),
-                    boxShadow: [...Brand.glow(110), ...shadow],
+                    color: Brand.navAccent,
+                    border: Border.all(color: Colors.white.withAlpha(60)),
+                    boxShadow: [...Brand.navGlow(), ...shadow],
                   ),
-                  child: const Icon(Icons.add_rounded, color: Colors.white, size: 30),
+                  child: const Icon(Icons.add_rounded, color: Brand.navBar, size: 30),
                 ),
               ),
             ),
@@ -833,7 +831,7 @@ class _GlassTab extends StatelessWidget {
               width: width,
               height: double.infinity,
               child: TweenAnimationBuilder<Color?>(
-                tween: ColorTween(end: selected ? Colors.white : Colors.white.withAlpha(140)),
+                tween: ColorTween(end: selected ? Brand.navBar : Colors.white.withAlpha(150)),
                 duration: Motion.medium,
                 curve: Motion.signature,
                 builder: (context, color, _) => Column(mainAxisAlignment: MainAxisAlignment.center, children: [

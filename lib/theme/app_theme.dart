@@ -109,6 +109,14 @@ abstract final class Brand {
     colors: [blue, violet],
   );
 
+  /// The floating tab bar: the home field's flat navy with the amber accent
+  /// for the selected tab and the add button.
+  static const navBar = Color(0xff0b1f47);
+  static const navAccent = Color(0xffffb547);
+  static List<BoxShadow> navGlow() => [
+        BoxShadow(color: navAccent.withAlpha(80), blurRadius: 16, offset: const Offset(0, 6)),
+      ];
+
   /// A coloured glow under brand-filled controls.
   static List<BoxShadow> glow([int alpha = 70]) => [
         BoxShadow(color: mid.withAlpha(alpha), blurRadius: 18, offset: const Offset(0, 8)),
